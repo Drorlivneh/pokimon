@@ -1,0 +1,264 @@
+ * {
+    margin: 0;
+    box-sizing: border-box;
+  }
+.page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.navbarContainer{
+    display: flex;
+    position:fixed;
+    height: 67px;
+    width: 100%;
+    
+    
+}
+.bigRectangle{
+    display: flex;
+
+    background: #020166;
+    height: 100%;
+    width:70% ;
+}
+.pokemonLogo{
+    margin-left: 85%;
+    align-items: center;
+}
+.homeButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 8%;
+    background: #94D97E;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 19px;
+
+}
+.favorites{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 12%;
+    background: #020166;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 19px;
+    color: #F7F7F9;
+}
+.blueRectangle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 8%;
+    background: #020166;
+   
+}
+.searchingContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 127px;
+    gap: 6px;
+}
+.searchBox{
+    width: 341px;
+    height: 36px;
+    border-radius: 9px;
+}
+.searchButton{
+    width: 87px;
+    height: 36px;
+    border-radius: 9px;
+    background: #373299;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #F7F7F9;
+}
+.gallery-section{
+
+    width: 1070.24px;
+    height: 848px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    
+}
+.ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.id-span {
+    color: #373299;
+    align-self: flex-start;
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 1em;
+  }
+#pokemon-modal-number{
+    display: flex;
+    align-self: flex-start;
+}
+
+.loadMoreContainer{
+    height: 160px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loadMoreButton{
+    width: 210px;
+    height: 36px;
+    border: 1px solid #373299;
+    border-radius: 9px;
+}
+.id-span{
+    display: flex;
+    color: #373299;
+    align-self: flex-start;
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 1em;
+}
+.one-pokemon-to-list{
+    width: 20%;
+    height: 25%;
+    padding: 2%;
+    background-color: #f7f7f9;
+    border-radius: 9px;
+    box-shadow: 1px 1px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pokemon-name {
+    font-family: "Roboto";
+    font-weight: 400;
+    color: #373299;
+    margin-top: 5%;
+    font-size: 1em;
+  } 
+  /* ///////////////////////////// */
+  #modal-container{
+    position: fixed;
+    display: flex;
+    display: none;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: #817777;
+    opacity: 93%;
+    z-index: 3;
+  }
+  #modal-target{
+    position: fixed;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 844px;
+    height: 342px;
+    background-color: #F7F7F9;
+    z-index: 3;
+    border-radius: 3px;
+  }
+  #left-side{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 35%;
+    height: 100%;
+    /* background-color: chartreuse; */
+  }
+  #li{
+    display: flex;
+    width: 90%;
+   }
+    .one-pokemon-to-modal{
+   b
+    padding: 2%;
+    background-color: #f7f7f9;
+    border-radius: 9px;
+    /* box-shadow: 1px 1px 5px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    } */
+
+  
+  .li{
+    display: flex;
+    width: 90%;
+    height: 750%;
+
+  }
+  #pokemon-all-types{
+    display: flex;
+    height: 15%;
+    
+  }
+  
+  #right-side{
+    display: flex;
+flex-direction: column;
+justify-content: center;
+width: 65%;
+height: 100%;
+/* background-color: rgb(51, 225, 216); */
+    
+  }
+  #description-container{
+    display: flex;
+flex-direction: column;
+width: 100%;
+height: 45%;
+/* background-color: darkmagenta; */
+  }
+  #description-title{
+    display: flex;
+width: 150px;
+height: 55%;
+
+/* background-color: rgb(19, 191, 0); */
+  }
+
+  #stats-list{
+    display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+width: 100%;
+height: 45%;
+/* background-color: rgb(34, 38, 42); */
+  }
+  #type-class{
+    
+  }
+ 
+
+
+
+
+
+
+
+
+
+
