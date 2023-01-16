@@ -1,15 +1,16 @@
 import data from "./files/pokedex (1).json" assert{type: "json"};
 
-
 function makeOnePokemon(i){
     let child = data[i];
     let span = document.createElement('span');
     span.innerHTML = '#00'+data[i].id;
     span.className = 'id-span';
+    
     // span.id = data[i].id;
     //
     let img = document.createElement('img');
     img.src = data[i].image.thumbnail;
+    img.className = 'img-locating'
     //
     let Name = document.createElement('span');
     Name.className = 'pokemon-name';
@@ -58,33 +59,97 @@ function makingModal(x){
     descriptionTitle.id = ('description-title');
     let descriptionContent = document.createElement('div');
     descriptionContent.id = ('description-content');
+    let statsContainer = document.createElement('div');
+    statsContainer.id = ('stats-containner');
+    let statsTitle = document.createElement('div');
+    statsTitle.innerHTML='stats';
+    let statsListContainer = document.createElement('div');
+    statsListContainer.id='stats-list-container';
+    statsTitle.id = ('stats-title');
     let stats = document.createElement('div');
     stats.id = ('stats');
     let statsList = document.createElement('div');
     statsList.id = ('stats-list');
-    descriptionTitle.innerHTML=`description`;
-    let pokemonType=[]
-    let pokemonAllTypes=  document.createElement('div');
-    pokemonAllTypes.id = ('pokemon-all-types')
+    descriptionTitle.innerHTML=`Description`;
+    let pokemonType=document.createElement('div');
+    pokemonType.id='pokemon-type';
+    // pokemonType.innerHTML='pokemon-type';
+
+    // pokemonType.appendChild(data[x].type);
+    
+
+    // let pokemonType=[]
+    let pokemonTypes = document.createElement('div');
+    pokemonTypes = child.type;
+    pokemonTypes.id = ('pokemon-all-types')
+    console.log(pokemonTypes);
     for (let i=0;i<child.type.length;i++){
         pokemonType[i] =  document.createElement('div');
-        pokemonType[i].id =(`pokemon-type${i}`);
+        pokemonType[i].id =(`pokemon-type`);
         pokemonType[i].append(child.type[i]);
         pokemonAllTypes.appendChild(pokemonType[i])
     }
-    console.log(pokemonAllTypes);
 
-   let pokemonStats={}
-    let pokemonAllStats=  document.createElement('div');
-    pokemonAllStats.id = ('pokemon-all-stats')
-    for (let i=0;i<child.base.length;i++){
-        pokemonType[i] =  document.createElement('div');
-        pokemonType[i].id =(`pokemon-type${i}`);
-        pokemonType[i].append(child.type[i]);
-        pokemonAllTypes.appendChild(pokemonType[i])
-    }
-    descriptionContent.innerHTML = child.description;
+    statsContainer.appendChild(statsTitle);
     
+        console.log(statsList);
+    
+    let leftStatDiv = document.createElement('div');
+    leftStatDiv.id = ('left-stats-containner');
+    let centerStatDiv = document.createElement('div');
+    centerStatDiv.id = ('center-stats-containner');
+    let rightStatDiv = document.createElement('div');
+    rightStatDiv.id = ('right-stats-containner');
+    descriptionContent.innerHTML = child.description;
+
+    let baseArray = (Object.values(data[x].base));
+    console.log(baseArray);
+
+    let leftStatDiv1 = document.createElement('div');
+    let leftStatDiv2 = document.createElement('div');
+    let leftStatDiv3 = document.createElement('div');
+
+    leftStatDiv.appendChild(leftStatDiv1);
+    leftStatDiv.appendChild(leftStatDiv2);
+    leftStatDiv.appendChild(leftStatDiv3);
+
+    leftStatDiv1.innerHTML = `HP:${data[x].base.HP}`
+    leftStatDiv2.innerHTML = `Attack:${data[x].base.Attack}`
+    leftStatDiv3.innerHTML = `Defense:${data[x].base.Defense}`
+
+    let centerStatDiv1 = document.createElement('div');
+    let centerStatDiv2 = document.createElement('div');
+    let centerStatDiv3 = document.createElement('div');
+
+    centerStatDiv.appendChild(centerStatDiv1);
+    centerStatDiv.appendChild(centerStatDiv2);
+    centerStatDiv.appendChild(centerStatDiv3);
+
+    centerStatDiv1.innerHTML = `Attack:${baseArray[3]}`
+    centerStatDiv2.innerHTML = `Defense:${baseArray[4]}`
+    centerStatDiv3.innerHTML = `Speed:${baseArray[5]}`
+
+    let rightStatDiv1 = document.createElement('div');
+    rightStatDiv.appendChild(rightStatDiv1);
+    let total=0;
+    for (let j=0;j<baseArray.length;j++){
+    total+= baseArray[j]
+    }
+    // leftStatDiv1.innerHTML = `total:${total}`
+
+    statsListContainer.appendChild(leftStatDiv);
+    statsListContainer.appendChild(centerStatDiv);
+    statsListContainer.appendChild(rightStatDiv);
+    
+    
+
+    // centerStatDiv.innerHTML = `Sp. Attack:${data[x].base.Sp. Attack}`
+    // centerStatDiv.innerHTML = `Sp. Defense:${data[x].base.Sp. Defense}`
+    // centerStatDiv.innerHTML = `Speed:${data[x].base.Defense}`
+
+    rightStatDiv.innerHTML = `total:${total}`
+    
+    descriptionContent.innerHTML = child.description;
     function makeOnePokemon(y){
         let child = data[y];
         let span = document.createElement('span');
@@ -94,6 +159,7 @@ function makingModal(x){
         //
         let img = document.createElement('img');
         img.src = data[y].image.thumbnail;
+        img.className = 'img-locating'
         //
         let Name = document.createElement('span');
         Name.className = 'pokemon-name';
@@ -115,9 +181,11 @@ function makingModal(x){
     leftSide.appendChild(pokemonAllTypes);
     modalTarget.appendChild(rightSide);
     rightSide.appendChild(descriptionContainer);
+    rightSide.appendChild(statsContainer);
+    statsContainer.appendChild(statsListContainer);
+    statsListContainer.appendChild(statsList);
     descriptionContainer.appendChild(descriptionTitle);
     descriptionContainer.appendChild(descriptionContent);
-    rightSide.appendChild(statsList);
 
 
     
