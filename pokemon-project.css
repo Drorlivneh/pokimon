@@ -173,6 +173,7 @@
   #modal-target{
     position: fixed;
     display: flex;
+    align-items: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -228,18 +229,37 @@
   
   #right-side{
     display: flex;
-flex-direction: column;
-justify-content: center;
-width: 65%;
-height: 100%;
-/* background-color: rgb(51, 225, 216); */
+    flex-direction: row;
+    gap: 6px;
+    height: 75%
     
-  }
-  #description-container{
-    display: flex;
-    flex-direction: column;
-    width: 349px;
-    height: 50%;
+    /* display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 65%;
+    height: 100%; */
+/* background-color: rgb(51, 225, 216); */
+}
+#verical-line{
+  height: 100%;
+  width: 1px;
+  background: rgb(125, 122, 122)
+}
+
+#info-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  width: 98%;
+
+}
+  
+#description-container{
+  display: flex;
+  flex-direction: column;
+  width: 349px;
+  height: 50%;
 /* background-color: darkmagenta; */
   }
   #description-title{
@@ -255,16 +275,20 @@ height: 100%;
 /* identical to box height */
 color: #373299;
 width: 150px;
-
+  }
 
 #description-content{
   width: 349px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+
+  color: #020166;
 }
 
-
-/* background-color: rgb(19, 191, 0); */
-  }
-
+  
   #stats-containner{
     display: flex;
     flex-direction: column;
@@ -289,7 +313,12 @@ color: #373299;
   display: flex;
     flex-direction: row;
     height: 80px;
-    
+    color: #020166;
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 21px;
     gap: 48px;
 
 }
@@ -320,11 +349,27 @@ color: #373299;
   #type-class{
     
   }
- 
-#pokemon-type{
+#modal-types-div{
+display: flex;
+gap: 10px;
 
 }
+#pokemon-type{
+  width: 78px;
+  height: 30px;
+  border-radius: 9px;
+  font-size: 21px;
+  font-weight: normal;
+  /* font: weight 100;; */
+  color: white;
+  text-align: center;
+  vertical-align: middle
+  ;
 
+}
+.type-color{
+
+}
 
 
 

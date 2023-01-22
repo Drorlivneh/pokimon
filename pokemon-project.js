@@ -1,5 +1,42 @@
 import data from "./files/pokedex (1).json" assert{type: "json"};
 
+// function colorFunction(type){
+//     let colorType='';
+
+//     if(type==='fire'){
+//         colorType = '#EE8130'
+//     }
+//         case 'normal':
+//             colorType = '#A8A77A'
+//         case 'fire':
+//             colorType = '#EE8130'
+//             console.log('object color iiiii');
+//         case 'water':
+//             colorType = '#6390F0'
+//         case 'electric':
+//             colorType = '#F7D02C'
+        
+    
+        // grass:   '#7AC74C',
+        // ice:   '#96D9D6',
+        // fighting:   '#C22E28',
+        // poison:   '#A33EA1',
+        // ground:   '#E2BF65',
+        // flying:   '#A98FF3',
+        // psychic:   '#F95587',
+        // bug:   '#A6B91A',
+        // rock:   '#B6A136',
+        // ghost:   '#735797',
+        // dragon:   '#6F35FC',
+        // dark:   '#705746',
+        // steel:   '#B7B7CE',
+        // fairy:   '#D685AD',
+
+// }
+// console.log('object color finish');
+//     console.log(type);
+//     return colorType;
+// }
 function makeOnePokemon(i){
     let child = data[i];
     let span = document.createElement('span');
@@ -46,13 +83,20 @@ function makingModal(x){
     modalContainer.addEventListener('click',closeModal)
     let modalTarget = document.createElement('div');
     modalTarget.id = ('modal-target');
+     //left side
     let leftSide =  document.createElement('div');
     leftSide.id = ('left-side');
     let pokeModalType = document.createElement('div');
     pokeModalType.id = ('poke-modal-type');
+    let leftStatDiv = document.createElement('div');
+    leftStatDiv.id = ('left-stats-containner');
     //right side
     let rightSide =  document.createElement('div');
     rightSide.id = ('right-side');
+    let verticalLine =  document.createElement('div');
+    verticalLine.id = ('verical-line');
+    let infoContainer =  document.createElement('div');
+    infoContainer.id = ('info-container');
     let descriptionContainer = document.createElement('div');
     descriptionContainer.id = ('description-container');
     let descriptionTitle = document.createElement('div');
@@ -71,31 +115,107 @@ function makingModal(x){
     let statsList = document.createElement('div');
     statsList.id = ('stats-list');
     descriptionTitle.innerHTML=`Description`;
-    let pokemonType=document.createElement('div');
-    pokemonType.id='pokemon-type';
+    
+
+
+    // let pokemonType=document.createElement('div');
+    // pokemonType.id='pokemon-type';
     // pokemonType.innerHTML='pokemon-type';
 
     // pokemonType.appendChild(data[x].type);
     
+{/* <div id "modalTypesDiv">
+        <div id 'type1'>
 
-    // let pokemonType=[]
-    let pokemonTypes = document.createElement('div');
-    pokemonTypes = child.type;
-    pokemonTypes.id = ('pokemon-all-types')
-    console.log(pokemonTypes);
+        </div>
+        <div id 'type2'>
+
+        </div>
+
+    </div> */}
+    
+   
+    let modalTypesContainer = document.createElement('div');
+    modalTypesContainer.id = ('modal-types-div');
     for (let i=0;i<child.type.length;i++){
-        pokemonType[i] =  document.createElement('div');
-        pokemonType[i].id =(`pokemon-type`);
-        pokemonType[i].append(child.type[i]);
-        pokemonAllTypes.appendChild(pokemonType[i])
+        let pokemonType =  document.createElement('div');
+        pokemonType.id =(`pokemon-type`);
+        pokemonType.innerHTML =(child.type[i]);
+        console.log(child.type[i]);
+        modalTypesContainer.appendChild(pokemonType);
+        switch(child.type[i]){
+            case 'Normal':
+                pokemonType.style.background = '#A8A77A';
+                break;
+            case 'Fire':
+                pokemonType.style.background = '#EE8130';
+                break;
+            case 'Water':
+                pokemonType.style.background = '#6390F0';
+                break;
+            case 'Electric':
+                pokemonType.style.background = '#F7D02C';
+                break;
+            case 'Grass':
+                pokemonType.style.background = '#7AC74C';
+                break;
+            case 'Ice':
+                pokemonType.style.background = '#96D9D6';
+                break;
+            case 'Fighting':
+                pokemonType.style.background = '#C22E28';
+                break;
+            case 'Poison':
+                pokemonType.style.background =  '#A33EA1';
+                break;
+            case 'Ground':
+                pokemonType.style.background =  '#E2BF65';
+                break;         
+            case 'Flying':
+                pokemonType.style.background =  '#A98FF3';
+                break;
+            case 'Psychic':
+                pokemonType.style.background =  '#F95587';
+                break;
+            case 'Bug':
+                pokemonType.style.background =  '#A6B91A';
+                break;
+            case 'Rock':
+                pokemonType.style.background =  '#B6A136';
+                break;
+            case 'Ghost':
+                pokemonType.style.background =  '#735797';
+                break;
+            case 'Dragon':
+                pokemonType.style.background =  '#6F35FC';
+                break;
+             case 'Dark':
+                pokemonType.style.background =  '#705746';
+                break;
+            case 'Fairy':
+                pokemonType.style.background =  '#D685AD';
+                break;   
+            case 'Steel':
+                pokemonType.style.background =  '#B7B7CE';
+                break;
+            
+        }
+        console.log();
+    //     if ( child.type[i]==='Fire'){
+    //         console.log('got into loop');
+
+    //         pokemonType.style.background= '#EE8130';
+    // }
+        // console.log(pokemonType.style.background)
+
+     
     }
 
     statsContainer.appendChild(statsTitle);
     
         console.log(statsList);
     
-    let leftStatDiv = document.createElement('div');
-    leftStatDiv.id = ('left-stats-containner');
+   
     let centerStatDiv = document.createElement('div');
     centerStatDiv.id = ('center-stats-containner');
     let rightStatDiv = document.createElement('div');
@@ -178,10 +298,13 @@ function makingModal(x){
     makeOnePokemon(x)
     modalContainer.appendChild(modalTarget);
     modalTarget.appendChild(leftSide);
-    leftSide.appendChild(pokemonAllTypes);
+    leftSide.appendChild(modalTypesContainer);
     modalTarget.appendChild(rightSide);
-    rightSide.appendChild(descriptionContainer);
-    rightSide.appendChild(statsContainer);
+    rightSide.appendChild(verticalLine);
+    rightSide.appendChild(infoContainer);
+    infoContainer.appendChild(descriptionContainer);
+    infoContainer.appendChild(statsContainer);
+
     statsContainer.appendChild(statsListContainer);
     statsListContainer.appendChild(statsList);
     descriptionContainer.appendChild(descriptionTitle);
@@ -201,7 +324,6 @@ function modalByClick () {
     console.log(this.id);
     let childId = this.id;
     let x = childId-1;
-     console.log(childId);
      makingModal(x);
      let modalChild = data[childId-1];
      console.log (modalChild);
